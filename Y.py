@@ -1543,25 +1543,25 @@ if st.session_state.page2:
     #建物画像表示部分ーーーーー＞＞＞＞＞＞＞＞＞＞＞＞＞要取得*2、3、4カラム使用
     col1, col2, col3, col4 = st.columns(4)  
     # 画像のパス
-    image_paths = [
-        '/Users/kazukimaehashi/Downloads/tech0/github練習用/OUTPUT_property1.png',
-        '/Users/kazukimaehashi/Downloads/tech0/github練習用/OUTPUT_property2.png',
-        '/Users/kazukimaehashi/Downloads/tech0/github練習用/OUTPUT_property3.png'
-    ]
+    image_paths1 ='/Users/kazukimaehashi/Downloads/tech0/github練習用/OUTPUT_property1.png'
+    image_paths2 ='/Users/kazukimaehashi/Downloads/tech0/github練習用/OUTPUT_property2.png'
+    image_paths3 ='/Users/kazukimaehashi/Downloads/tech0/github練習用/OUTPUT_property3.png'
 
+
+    # col1 に空欄を挿入
     # col1 に空欄を挿入
     with col1:
         st.write("")
 
     # col2, col3, col4 に画像を中央揃えで挿入
     with col2:
-        st.image(image_paths[0], use_column_width=True)
+        st.image(image_paths1, use_column_width=True)
 
     with col3:
-        st.image(image_paths[1], use_column_width=True)
+        st.image(image_paths2, use_column_width=True)
 
     with col4:
-        st.image(image_paths[2], use_column_width=True)
+        st.image(image_paths3, use_column_width=True)
     
     
     #建物住所表示部分
