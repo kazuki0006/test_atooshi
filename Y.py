@@ -1725,22 +1725,25 @@ if st.session_state.page2:
     # 画像をMarkdown形式で表示し、スタイルを指定して中央揃え
     col2.markdown(f'<p style="text-align: center;"><img src="data:image/png;base64,{image_to_base64(resized_image2)}" alt="Image"></p>', unsafe_allow_html=True)
 
-
+    font_size = 70 
+    col3.markdown(f'<div style="text-align:center;"><span style="font-size:{font_size}px;">{96}</span></div>', unsafe_allow_html=True)
     
     font_size = 50 
     
     # 画像とテキストを同じ列に配置------------------------------------------>>>>>数字仮置き
+
+
     col4.image(image4, use_column_width=True)
-    col4.markdown(f'<div style="text-align:center;"><span style="font-size:{font_size}px;"> {st.session_state.input_data["weight_work"]}</span></div>', unsafe_allow_html=True)
+    col4.markdown(f'<div style="text-align:center;"><span style="font-size:{font_size}px;">{90}</span></div>', unsafe_allow_html=True)
 
     col5.image(image5, use_column_width=True)
-    col5.markdown(f'<div style="text-align:center;"><span style="font-size:{font_size}px;"> {st.session_state.input_data["weight_life"]}</span></div>', unsafe_allow_html=True)
+    col5.markdown(f'<div style="text-align:center;"><span style="font-size:{font_size}px;"> {96}</span></div>', unsafe_allow_html=True)
 
     col6.image(image6, use_column_width=True)
-    col6.markdown(f'<div style="text-align:center;"><span style="font-size:{font_size}px;"> {st.session_state.input_data["weight_kids"]}</span></div>', unsafe_allow_html=True)
+    col6.markdown(f'<div style="text-align:center;"><span style="font-size:{font_size}px;"> {89}</span></div>', unsafe_allow_html=True)
 
     col7.image(image7, use_column_width=True)
-    col7.markdown(f'<div style="text-align:center;"><span style="font-size:{font_size}px;"> {st.session_state.input_data["weight_safe"]}</span></div>', unsafe_allow_html=True)
+    col7.markdown(f'<div style="text-align:center;"><span style="font-size:{font_size}px;"> {100}</span></div>', unsafe_allow_html=True)
 
 
     
