@@ -1554,9 +1554,14 @@ if st.session_state.page2:
         st.write("")
 
     # col2, col3, col4 に画像を中央揃えで挿入
-    for i, image_path in enumerate(image_paths):
-        with col2 if i == 0 else col3 if i == 1 else col4:
-            st.image(image_path, use_column_width=True)
+    with col2:
+        st.image(image_paths[0], use_column_width=True)
+
+    with col3:
+        st.image(image_paths[1], use_column_width=True)
+
+    with col4:
+        st.image(image_paths[2], use_column_width=True)
     
     
     #建物住所表示部分
