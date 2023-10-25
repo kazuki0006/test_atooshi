@@ -22,7 +22,7 @@ import requests
 from bs4 import BeautifulSoup
 
 # 画像のディレクトリ指定
-image_directory = "/Users/kazukimaehashi/Downloads/tech0/github練習用/"
+image_directory = "image/"
 
 # session_stateの初期化
 if 'page2' not in st.session_state:
@@ -42,7 +42,7 @@ if not st.session_state.page2:
              })
 
     #バナー指定
-    image = Image.open('INPUT_TOP.png')
+    image = Image.open('image/INPUT_TOP.png')
     st.image(image, use_column_width=True)
 
 
@@ -52,7 +52,7 @@ if not st.session_state.page2:
     st.markdown(html_message, unsafe_allow_html=True)
     html_message0 = "<p style='font-family: Hiragino Sans GB; text-align: center; font-size: 24px;'>新しい居住地。<br>転勤で引越しをするときは慌ただしく転居先を決める必要があります。<br>見知らぬ地への転勤であなたは大事にしたいポイントを押さえられていますか。<br>あなたが物件選びで重視したいポイントを教えてください。<br>「最終判断後押しくん」は物件情報だけではわからない、あなたが大事にするポイントをスコア化して<br>物件の最終判断を後押しします。</p>"
     st.markdown(html_message0, unsafe_allow_html=True)
-    image1 = Image.open('INPUT_SCORE.png') 
+    image1 = Image.open('image/INPUT_SCORE.png') 
     st.image(image1, use_column_width=True)
     #スコア名表示部分
     col1, col2, col3, col4 = st.columns(4)
@@ -1525,7 +1525,7 @@ if st.session_state.page2:
 ##########################################################################################################
 
     #OUTPUTトップ画像
-    image = Image.open('OUTPUT_TOP.png')
+    image = Image.open('image/OUTPUT_TOP.png')
     st.image(image, use_column_width=True)
     
     # 建物名表示部分
@@ -1543,25 +1543,20 @@ if st.session_state.page2:
     #建物画像表示部分ーーーーー＞＞＞＞＞＞＞＞＞＞＞＞＞要取得*2、3、4カラム使用
     col1, col2, col3, col4 = st.columns(4)  
     # 画像のパス
-    image_paths1 ='/Users/kazukimaehashi/Downloads/tech0/github練習用/OUTPUT_property1.png'
-    image_paths2 ='/Users/kazukimaehashi/Downloads/tech0/github練習用/OUTPUT_property2.png'
-    image_paths3 ='/Users/kazukimaehashi/Downloads/tech0/github練習用/OUTPUT_property3.png'
+    image_paths = [
+        'image/OUTPUT_property1.png',
+        'image/OUTPUT_property2.png',
+        'image/OUTPUT_property3.png'
+    ]
 
-
-    # col1 に空欄を挿入
     # col1 に空欄を挿入
     with col1:
         st.write("")
 
     # col2, col3, col4 に画像を中央揃えで挿入
-    with col2:
-        st.image(image_paths1, use_column_width=True)
-
-    with col3:
-        st.image(image_paths2, use_column_width=True)
-
-    with col4:
-        st.image(image_paths3, use_column_width=True)
+    for i, image_path in enumerate(image_paths):
+        with col2 if i == 0 else col3 if i == 1 else col4:
+            st.image(image_path, use_column_width=True)
     
     
     #建物住所表示部分
@@ -1581,7 +1576,7 @@ if st.session_state.page2:
     font_size = 70 
     
     #TotalScore画像サイズ変更処理
-    image2_path = '/Users/kazukimaehashi/Downloads/tech0/github練習用/OUTPUT_TotalScore.png'
+    image2_path = 'image/OUTPUT_TotalScore.png'
     
     def image_to_base64(image):
         buffered = BytesIO()
@@ -1680,7 +1675,7 @@ if st.session_state.page2:
                 
 ################################################################################################################### 
     #ライン挿入
-    image = Image.open('OUTPUT_line.png')
+    image = Image.open('image/OUTPUT_line.png')
     st.image(image, use_column_width=True)
     col1, col2, col3, col4, col5, col6, col7 = st.columns(7)
     col1.markdown('<p style="text-align: center; font-size: 20px;">おすすめ物件</p>', unsafe_allow_html=True)
@@ -1703,12 +1698,12 @@ if st.session_state.page2:
 
 
     # 各画像のパス
-    image1_path = '/Users/kazukimaehashi/Downloads/tech0/github練習用/OUTPUT_recommendsample.png'
-    image2_path = '/Users/kazukimaehashi/Downloads/tech0/github練習用/OUTPUT_TotalScore.png'
-    image4_path = '/Users/kazukimaehashi/Downloads/tech0/github練習用/OUTPUT_RecommendWorking.png'
-    image5_path = '/Users/kazukimaehashi/Downloads/tech0/github練習用/OUTPUT_RecommendLiving.png'
-    image6_path = '/Users/kazukimaehashi/Downloads/tech0/github練習用/OUTPUT_RecommendKids.png'
-    image7_path = '/Users/kazukimaehashi/Downloads/tech0/github練習用/OUTPUT_RecommendSafety.png'
+    image1_path = 'image/OUTPUT_recommendsample.png'
+    image2_path = 'image/OUTPUT_TotalScore.png'
+    image4_path = 'image/OUTPUT_RecommendWorking.png'
+    image5_path = 'image/OUTPUT_RecommendLiving.png'
+    image6_path = 'image/OUTPUT_RecommendKids.png'
+    image7_path = 'image/OUTPUT_RecommendSafety.png'
 
     # 画像読み込み
     image1 = Image.open(image1_path)
@@ -1807,5 +1802,5 @@ if st.session_state.page2:
     
     
     #バナー指定
-    image = Image.open('OUTPUT_banner.png')
+    image = Image.open('image/OUTPUT_banner.png')
     st.image(image, use_column_width=True)
