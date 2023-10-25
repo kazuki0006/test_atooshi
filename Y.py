@@ -30,7 +30,7 @@ if 'page2' not in st.session_state:
     
 if not st.session_state.page2:   
     st.set_page_config(
-            page_title="Y",
+            page_title="最終判断後押しくん1",
             layout="wide", 
             menu_items={
                  'Get Help': 'https://www.google.com',
@@ -378,7 +378,7 @@ if not st.session_state.page2:
 
 if st.session_state.page2:
     st.set_page_config(
-        page_title="YY",
+        page_title="最終判断後押しくん2",
         layout="wide", 
         menu_items={
              'Get Help': 'https://www.google.com',
@@ -1540,7 +1540,7 @@ if st.session_state.page2:
         with col2 if i == 0 else col3 if i == 1 else col4:
             st.write(f'<p style="text-align: center;">{property_name}</p>', unsafe_allow_html=True)
     
-    #建物画像表示部分ーーーーー＞＞＞＞＞＞＞＞＞＞＞＞＞要取得*2、3、4カラム使用
+    #建物画像表示部分
     col1, col2, col3, col4 = st.columns(4)  
     # 画像のパス
     image_paths = [
